@@ -2,19 +2,19 @@
 
 library(tidyverse)
 
-data1 <- read_csv("datalab_export_2025-03-30 04_31_32.csv", show_col_types = FALSE)
+data1 <- read_csv("data/datalab_export_2025-03-30 04_31_32.csv", show_col_types = FALSE)
 
 head(data1)
 
 # You can also use read.table to load CSV files, be sure to use a delimiter, in this case a comma
 
-data2 <- read.table("datalab_export_2025-03-30 04_31_32.csv", sep = ",", header = 1)
+data2 <- read.table("data/datalab_export_2025-03-30 04_31_32.csv", sep = ",", header = 1)
 
 head(data2)
 
 # To import a text file, we use readLines() function
 
-data3 <- read.delim("drake_lyrics.txt", header = F)
+data3 <- read.delim("data/drake_lyrics.txt", header = F)
 
 head(data3, 5)
 
@@ -22,7 +22,7 @@ head(data3, 5)
 
 library(readxl)
 
-data4 <- read_excel("Tesla Deaths - Deaths.xlsx", sheet = 1)
+data4 <- read_excel("data/Tesla Deaths - Deaths.xlsx", sheet = 1)
 
 head(data4)
 
@@ -30,7 +30,7 @@ head(data4)
 
 library(rjson)
 
-JSONData <- fromJSON(file = "drake_data.json")
+JSONData <- fromJSON(file = "data/drake_data.json")
 
 print(JSONData[1])
 
@@ -44,7 +44,7 @@ data5
 
 library(RSQLite)
 
-conn <- dbConnect(RSQLite::SQLite(), "mental_health.sqlite")
+conn <- dbConnect(RSQLite::SQLite(), "data/mental_health.sqlite")
 
 dbListTables(conn)
 
@@ -99,13 +99,13 @@ View(data8)
 
 library(haven)
 
-data10 <- read_sas("lond_small.sas7bdat")
+data10 <- read_sas("data/lond_small.sas7bdat")
 
 head(data10, 5)
 
 # Import SPSS file
 
-data11 <- read_sav("airline_passengers.sav")
+data11 <- read_sav("data/airline_passengers.sav")
 
 head(data11, 5)
 
@@ -113,13 +113,13 @@ head(data11, 5)
 
 library("foreign")
 
-data12 <- read.spss("airline_passengers.sav", to.data.frame = TRUE)
+data12 <- read.spss("data/airline_passengers.sav", to.data.frame = TRUE)
 
 head(data12, 5)
 
 # Importing STATA file
 
-data13 <- read.data("friendly.dta")
+data13 <- read.data("data/friendly.dta")
 
 head(data13, 5)
 
@@ -127,7 +127,7 @@ head(data13, 5)
 
 library(R.matlab)
 
-data14 <- readMat("cross_dsads.mat")
+data14 <- readMat("data/cross_dsads.mat")
 
 head(data14$data.dsads)
 
@@ -141,4 +141,3 @@ getSymbols("GOOGL",
            periodicity = "daily")
 
 head(GOOGL, 5)
-
